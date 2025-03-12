@@ -1,0 +1,6 @@
+DMS by Dmytro Malikov <dmytro@malikov.us>
+
+Ace <https://ace.c9.io/>
+AG Grid <https://ag-grid.com/>
+Bootstrap Icons <https://icons.getbootstrap.com/>
+SheetJS XLSX <https://sheetjs.com/>

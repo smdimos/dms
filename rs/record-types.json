@@ -1,0 +1,2048 @@
+{
+	"ANALYSIS": {
+		"parentType": null,
+		"keyFields": [
+			"ANALYSIS",
+			"VERSION"
+		],
+		"remapFields": {
+			"ANALYSIS": "NAME"
+		}
+	},
+	"ANALYSIS_LIMITS": {
+		"parentType": "ANALYSIS",
+		"keyFields": [
+			"LIMIT_NUMBER"
+		],
+		"ordered": true,
+		"increment": {
+			"field": "LIMIT_NUMBER",
+			"incrementType": "LIMIT_NUMBER",
+			"incrementName": "ANALYSIS_LIMITS"
+		}
+	},
+	"ANALYSIS_VARIATION": {
+		"parentType": "ANALYSIS",
+		"keyFields": [
+			"VARIATION"
+		],
+		"ordered": true
+	},
+	"COMP_VARIATION": {
+		"parentType": "ANALYSIS_VARIATION",
+		"keyFields": [
+			"COMPONENT"
+		],
+		"ordered": true
+	},
+	"COMPONENT": {
+		"parentType": "ANALYSIS",
+		"keyFields": [
+			"COMPONENT"
+		],
+		"remapFields": {
+			"COMPONENT": "NAME"
+		},
+		"ordered": true
+	},
+	"COMPONENT_CODES": {
+		"parentType": "COMPONENT",
+		"keyFields": [
+			"CODE"
+		]
+	},
+	"COMPONENT_FACTORS": {
+		"parentType": "COMPONENT",
+		"keyFields": [
+			"REPLICATE_COUNT"
+		]
+	},
+	"CALCULATION": {
+		"parentType": "COMPONENT",
+		"keyFields": []
+	},
+	"CALC_VARIABLES": {
+		"parentType": "COMPONENT",
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"PRODUCT": {
+		"parentType": null,
+		"keyFields": [
+			"PRODUCT",
+			"VERSION"
+		],
+		"remapFields": {
+			"PRODUCT": "NAME"
+		}
+	},
+	"PRODUCT_GRADE": {
+		"parentType": "PRODUCT",
+		"keyFields": [
+			"SAMPLING_POINT",
+			"GRADE"
+		],
+		"ordered": true
+	},
+	"PROD_GRADE_STAGE": {
+		"parentType": "PRODUCT_GRADE",
+		"keyFields": [
+			"STAGE",
+			"ANALYSIS",
+			"SPEC_TYPE"
+		],
+		"ordered": true
+	},
+	"PRODUCT_SPEC": {
+		"parentType": "PROD_GRADE_STAGE",
+		"keyFields": [
+			"ENTRY_CODE"
+		],
+		"ordered": true,
+		"increment": {
+			"field": "ENTRY_CODE",
+			"incrementType": "PRODUCT",
+			"incrementName": "ENTRY_CODE"
+		}
+	},
+	"T_PH_PROD_COMP": {
+		"parentType": "PRODUCT",
+		"keyFields": [
+			"COMPOUND"
+		],
+		"ordered": true
+	},
+	"T_PH_PROD_COMP_ITEM": {
+		"parentType": "T_PH_PROD_COMP",
+		"keyFields": [
+			"ENTRY_CODE"
+		],
+		"ordered": true,
+		"increment": {
+			"field": "ENTRY_CODE",
+			"incrementType": "T_PH_PROD_COMP_ITEM",
+			"incrementName": "ENTRY_CODE"
+		}
+	},
+	"T_PH_PROD_LABELS": {
+		"parentType": "PRODUCT",
+		"keyFields": [
+			"ENTRY_CODE"
+		],
+		"ordered": true
+	},
+	"ACCESS_ROUTINES": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"ACCOUNT": {
+		"parentType": null,
+		"keyFields": [
+			"ACCOUNT_NUMBER"
+		],
+		"increment": {
+			"field": "ACCOUNT_NUMBER",
+			"incrementType": "ACCOUNT",
+			"incrementName": "ACCOUNT_NUMBER"
+		}
+	},
+	"ADDRESS_BOOK": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"ADDRESS_BOOK_TEMP": {
+		"parentType": null,
+		"keyFields": [
+			"TEMPLATE"
+		],
+		"remapFields": {
+			"TEMPLATE": "NAME"
+		}
+	},
+	"ADDRESS_BK_TMP_FLD": {
+		"parentType": "ADDRESS_BOOK_TEMP",
+		"keyFields": [
+			"FIELD_NAME"
+		],
+		"ordered": true
+	},
+	"AD_HOC_COMPONENT": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"ANALYSIS_RULES": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"ANALYSIS_TYPES": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"APPROVAL_ROLE": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"APPROVAL_ROUTING": {
+		"parentType": null,
+		"keyFields": [
+			"APPROVAL_ROUTING"
+		],
+		"remapFields": {
+			"APPROVAL_ROUTING": "NAME"
+		}
+	},
+	"APPROVAL_GROUPS": {
+		"parentType": "APPROVAL_ROUTING",
+		"keyFields": [
+			"APPROVAL_GROUP"
+		],
+		"ordered": true
+	},
+	"APPROVAL_STEPS": {
+		"parentType": "APPROVAL_GROUPS",
+		"keyFields": [
+			"APPROVAL_STEP"
+		],
+		"ordered": true
+	},
+	"BATCH_HDR_TEMPLATE": {
+		"parentType": null,
+		"keyFields": [
+			"TEMPLATE",
+			"VERSION"
+		],
+		"remapFields": {
+			"TEMPLATE": "NAME"
+		}
+	},
+	"BATCH_HDR_TMP_FLDS": {
+		"parentType": "BATCH_HDR_TEMPLATE",
+		"keyFields": [
+			"FIELD_NAME"
+		],
+		"ordered": true
+	},
+	"BATCH_ACTION_DEF": {
+		"parentType": "BATCH_HDR_TEMPLATE",
+		"keyFields": [
+			"NAME"
+		],
+		"ordered": true
+	},
+	"BATCH_COMPONENT": {
+		"parentType": "BATCH_HDR_TEMPLATE",
+		"keyFields": [
+			"COMPONENT"
+		],
+		"remapFields": {
+			"COMPONENT": "NAME"
+		},
+		"ordered": true
+	},
+	"BATCH_COMP_CODES": {
+		"parentType": "BATCH_COMPONENT",
+		"keyFields": [
+			"CODE"
+		]
+	},
+	"BATCH_ID_CONFIG": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"BATCH_LINK": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"CHARGE_CODE": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"CHART_GROUPS": {
+		"parentType": null,
+		"keyFields": [
+			"CHART_GROUP"
+		],
+		"remapFields": {
+			"CHART_GROUP": "NAME"
+		}
+	},
+	"CHART_GROUPS_ENTRY": {
+		"parentType": "CHART_GROUPS",
+		"keyFields": [
+			"TEMPLATE"
+		],
+		"ordered": true
+	},
+	"CHART_TEMPLATE": {
+		"parentType": null,
+		"keyFields": [
+			"TEMPLATE"
+		],
+		"remapFields": {
+			"TEMPLATE": "NAME"
+		}
+	},
+	"VARIABLE_CHART": {
+		"parentType": "CHART_TEMPLATE"
+	},
+	"RUN_CHART": {
+		"parentType": "CHART_TEMPLATE"
+	},
+	"REGRESSION": {
+		"parentType": "CHART_TEMPLATE"
+	},
+	"HISTOGRAM": {
+		"parentType": "CHART_TEMPLATE"
+	},
+	"SCATTER_CHART": {
+		"parentType": "CHART_TEMPLATE"
+	},
+	"CM_MACHINE": {
+		"parentType": null,
+		"keyFields": [
+			"CLIENT_NAME"
+		]
+	},
+	"CM_SERVICE": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"CODE_SNIPPETS": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"COMMON_NAME": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"UNITS": {
+		"parentType": null,
+		"keyFields": [
+			"UNIT_CODE"
+		]
+	},
+	"LIST": {
+		"parentType": null,
+		"keyFields": [
+			"LIST"
+		],
+		"remapFields": {
+			"LIST": "NAME"
+		}
+	},
+	"LIST_ENTRY": {
+		"parentType": "LIST",
+		"keyFields": [
+			"NAME"
+		],
+		"ordered": true
+	},
+	"CONDITION": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"CONFIG_PACKAGE": {
+		"parentType": null,
+		"keyFields": [
+			"CONFIG_PACKAGE",
+			"VERSION"
+		],
+		"remapFields": {
+			"CONFIG_PACKAGE": "NAME"
+		}
+	},
+	"CONFIG_PACK_FILE": {
+		"parentType": "CONFIG_PACKAGE",
+		"keyFields": [
+			"CONFIG_ELEMENT_ID"
+		],
+		"ordered": true
+	},
+	"CONFIG_PACK_FUNCTION": {
+		"parentType": "CONFIG_PACKAGE",
+		"keyFields": [
+			"CONFIG_ELEMENT_ID"
+		],
+		"ordered": true
+	},
+	"CONFIG_PACK_IMP_SUB": {
+		"parentType": "CONFIG_PACKAGE",
+		"keyFields": [
+			"CONFIG_ELEMENT_ID"
+		],
+		"ordered": true
+	},
+	"CONFIG_PACK_OBJECT": {
+		"parentType": "CONFIG_PACKAGE",
+		"keyFields": [
+			"CONFIG_ELEMENT_ID"
+		],
+		"ordered": true
+	},
+	"CONFIG_PACK_POST_SUB": {
+		"parentType": "CONFIG_PACKAGE",
+		"keyFields": [
+			"CONFIG_ELEMENT_ID"
+		],
+		"ordered": true
+	},
+	"CONFIG_PACK_PRE_SUB": {
+		"parentType": "CONFIG_PACKAGE",
+		"keyFields": [
+			"CONFIG_ELEMENT_ID"
+		],
+		"ordered": true
+	},
+	"CONFIG_PACK_SQL": {
+		"parentType": "CONFIG_PACKAGE",
+		"keyFields": [
+			"CONFIG_ELEMENT_ID"
+		],
+		"ordered": true
+	},
+	"CONFIG_PACK_TABLE": {
+		"parentType": "CONFIG_PACKAGE",
+		"keyFields": [
+			"TABLE_NAME",
+			"FIELD_NAME",
+			"ACTION"
+		],
+		"ordered": true
+	},
+	"CONFIG_PACK_WINDOW": {
+		"parentType": "CONFIG_PACKAGE",
+		"keyFields": [
+			"CONFIG_ELEMENT_ID"
+		],
+		"ordered": true
+	},
+	"CONTACT_TEMPLATE": {
+		"parentType": null,
+		"keyFields": [
+			"TEMPLATE"
+		],
+		"remapFields": {
+			"TEMPLATE": "NAME"
+		}
+	},
+	"CONTACT_TEMP_FLDS": {
+		"parentType": "CONTACT_TEMPLATE",
+		"keyFields": [
+			"FIELD_NAME"
+		],
+		"ordered": true
+	},
+	"CONTACT_TEMP_GRPS": {
+		"parentType": "CONTACT_TEMPLATE",
+		"keyFields": [
+			"GROUP_NUMBER"
+		],
+		"ordered": true
+	},
+	"CONTCT_TMP_DSP_FLD": {
+		"parentType": "CONTACT_TEMPLATE",
+		"keyFields": [
+			"FIELD_NAME"
+		],
+		"ordered": true
+	},
+	"CONTAINER_TYPE": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"CONTRACT_CURRENCY": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"CONTRACT_QUOTE_ID": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"COUNTRY": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"CUSTOMER": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"DAYLIGHT_SAVINGS": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"DOCUMENT_LIFECYCLE": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"DOCUMENT_STATE": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"DOCUMENT_TEMPLATE": {
+		"parentType": null,
+		"keyFields": [
+			"TEMPLATE"
+		],
+		"remapFields": {
+			"TEMPLATE": "NAME"
+		}
+	},
+	"DOCUMENT_TMP_FLDS": {
+		"parentType": "DOCUMENT_TEMPLATE",
+		"keyFields": [
+			"FIELD_NAME"
+		],
+		"ordered": true
+	},
+	"DOC_TEMP_GROUPS": {
+		"parentType": "DOCUMENT_TEMPLATE",
+		"keyFields": [
+			"GROUP_NUMBER"
+		],
+		"ordered": true
+	},
+	"DOCUMENT_TYPES": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"EXP_ID_CNFG": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"EXP_TEMPLATE": {
+		"parentType": null,
+		"keyFields": [
+			"TEMPLATE",
+			"VERSION"
+		],
+		"remapFields": {
+			"TEMPLATE": "NAME"
+		}
+	},
+	"EXP_TMP_FLDS": {
+		"parentType": "EXP_TEMPLATE",
+		"keyFields": [
+			"FIELD_NAME"
+		],
+		"ordered": true
+	},
+	"EXP_TEMP_GRPS": {
+		"parentType": "EXP_TEMPLATE",
+		"keyFields": [
+			"GROUP_NUMBER"
+		],
+		"ordered": true
+	},
+	"EXTERNAL_LOCATION": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"FILE_TYPE": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"FLAG_TEMPLATE": {
+		"parentType": null,
+		"keyFields": [
+			"TEMPLATE"
+		],
+		"remapFields": {
+			"TEMPLATE": "NAME"
+		}
+	},
+	"FLAG_TEMPLATE_FLDS": {
+		"parentType": "FLAG_TEMPLATE",
+		"keyFields": [
+			"FIELD_NAME"
+		],
+		"ordered": true
+	},
+	"FOLDER_GROUP": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"FOLDER_TEMPLATE": {
+		"parentType": null,
+		"keyFields": [
+			"TEMPLATE"
+		],
+		"remapFields": {
+			"TEMPLATE": "NAME"
+		}
+	},
+	"FLDR_TEMPLATE_FIELDS": {
+		"parentType": "FOLDER_TEMPLATE",
+		"keyFields": [
+			"FIELD_NAME"
+		],
+		"ordered": true
+	},
+	"FLDR_ACTION_DEF": {
+		"parentType": "FOLDER_TEMPLATE",
+		"keyFields": [
+			"NAME"
+		],
+		"ordered": true
+	},
+	"FORMAT_CALCULATION": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"FORMULATION_TEMP": {
+		"parentType": null,
+		"keyFields": [
+			"TEMPLATE",
+			"VERSION"
+		],
+		"remapFields": {
+			"TEMPLATE": "NAME"
+		}
+	},
+	"FORMULA_TMP_FIELDS": {
+		"parentType": "FORMULATION_TEMP",
+		"keyFields": [
+			"FIELD_NAME"
+		],
+		"ordered": true
+	},
+	"FORMULA_TMP_GRPS": {
+		"parentType": "FORMULATION_TEMP",
+		"keyFields": [
+			"GROUP_NUMBER"
+		],
+		"ordered": true
+	},
+	"FORMULA_ID_CNFG": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"FULFILLMENT_TMP": {
+		"parentType": null,
+		"keyFields": [
+			"TEMPLATE"
+		],
+		"remapFields": {
+			"TEMPLATE": "NAME"
+		}
+	},
+	"FULFILL_TMP_FIELDS": {
+		"parentType": "FULFILLMENT_TMP",
+		"keyFields": [
+			"FIELD_NAME"
+		],
+		"ordered": true
+	},
+	"FULFILL_TMP_GROUPS": {
+		"parentType": "FULFILLMENT_TMP",
+		"keyFields": [
+			"GROUP_NUMBER"
+		],
+		"ordered": true
+	},
+	"FULFILL_ENT_TMP": {
+		"parentType": null,
+		"keyFields": [
+			"TEMPLATE"
+		],
+		"remapFields": {
+			"TEMPLATE": "NAME"
+		}
+	},
+	"FULFILL_ENT_TMP_FLDS": {
+		"parentType": "FULFILL_ENT_TMP",
+		"keyFields": [
+			"FIELD_NAME"
+		],
+		"ordered": true
+	},
+	"FULFILL_ENT_TMP_GRPS": {
+		"parentType": "FULFILL_ENT_TMP",
+		"keyFields": [
+			"GROUP_NUMBER"
+		],
+		"ordered": true
+	},
+	"FULFILL_ID_CONFIG": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"FULFILL_PCK_TMP": {
+		"parentType": null,
+		"keyFields": [
+			"TEMPLATE"
+		],
+		"remapFields": {
+			"TEMPLATE": "NAME"
+		}
+	},
+	"FULFILL_PCK_TMP_FLDS": {
+		"parentType": "FULFILL_PCK_TMP",
+		"keyFields": [
+			"FIELD_NAME"
+		],
+		"ordered": true
+	},
+	"FULFILL_PCK_TMP_GRPS": {
+		"parentType": "FULFILL_PCK_TMP",
+		"keyFields": [
+			"GROUP_NUMBER"
+		],
+		"ordered": true
+	},
+	"GENEALOGY_TEMPLATE": {
+		"parentType": null,
+		"keyFields": [
+			"TEMPLATE"
+		],
+		"remapFields": {
+			"TEMPLATE": "NAME"
+		}
+	},
+	"GENEALOGY_ACTIONS": {
+		"parentType": "GENEALOGY_TEMPLATE",
+		"keyFields": [
+			"NAME"
+		],
+		"ordered": true
+	},
+	"GENEALOGY_CHILD_GRPS": {
+		"parentType": "GENEALOGY_TEMPLATE",
+		"keyFields": [
+			"NAME"
+		],
+		"ordered": true
+	},
+	"HAZARD": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"HTML_FILES": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"ID_CONFIGURATION": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"INGREDIENT": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"INSTRUMENTS": {
+		"parentType": null,
+		"keyFields": [
+			"INSTRUMENTS"
+		],
+		"remapFields": {
+			"INSTRUMENTS": "NAME"
+		}
+	},
+	"INSTRUMENT_METHOD": {
+		"parentType": "INSTRUMENTS",
+		"keyFields": [
+			"METHOD"
+		],
+		"ordered": true
+	},
+	"T_PH_INST_EVENT": {
+		"parentType": "INSTRUMENTS",
+		"keyFields": [
+			"ENTRY"
+		],
+		"ordered": true
+	},
+	"INSTRUMENT_TMP": {
+		"parentType": null,
+		"keyFields": [
+			"TEMPLATE"
+		],
+		"remapFields": {
+			"TEMPLATE": "NAME"
+		}
+	},
+	"INST_TMP_FIELDS": {
+		"parentType": "INSTRUMENT_TMP",
+		"keyFields": [
+			"FIELD_NAME"
+		],
+		"ordered": true
+	},
+	"INST_EVENT_TMP": {
+		"parentType": null,
+		"keyFields": [
+			"TEMPLATE"
+		],
+		"remapFields": {
+			"TEMPLATE": "NAME"
+		}
+	},
+	"INST_EVNT_TMP_FLDS": {
+		"parentType": "INST_EVENT_TMP",
+		"keyFields": [
+			"FIELD_NAME"
+		],
+		"ordered": true
+	},
+	"INVENTORY_FILTER": {
+		"parentType": null,
+		"keyFields": [
+			"TEMPLATE"
+		],
+		"remapFields": {
+			"TEMPLATE": "NAME"
+		}
+	},
+	"INV_FILTER_FIELDS": {
+		"parentType": "INVENTORY_FILTER",
+		"keyFields": [
+			"FIELD_NAME"
+		],
+		"ordered": true
+	},
+	"INVENTORY_ID_CONFIG": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"INVENTORY_LOCATION": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"INVENTORY_TMP": {
+		"parentType": null,
+		"keyFields": [
+			"TEMPLATE"
+		],
+		"remapFields": {
+			"TEMPLATE": "NAME"
+		}
+	},
+	"INVENTORY_TMP_FIELDS": {
+		"parentType": "INVENTORY_TMP",
+		"keyFields": [
+			"FIELD_NAME"
+		],
+		"ordered": true
+	},
+	"INVENTORY_TMP_GROUPS": {
+		"parentType": "INVENTORY_TMP",
+		"keyFields": [
+			"GROUP_NUMBER"
+		],
+		"ordered": true
+	},
+	"INVESTIGATION_TMP": {
+		"parentType": null,
+		"keyFields": [
+			"TEMPLATE"
+		],
+		"remapFields": {
+			"TEMPLATE": "NAME"
+		}
+	},
+	"INVEST_TMP_FIELDS": {
+		"parentType": "INVESTIGATION_TMP",
+		"keyFields": [
+			"FIELD_NAME"
+		],
+		"ordered": true
+	},
+	"INVEST_TMP_GROUPS": {
+		"parentType": "INVESTIGATION_TMP",
+		"keyFields": [
+			"GROUP_NUMBER"
+		],
+		"ordered": true
+	},
+	"INVEST_ID_CONFIG": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"INVOICE_ID": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"INV_ENTRY_ID_CONFIG": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"INV_ENTRY_TMP": {
+		"parentType": null,
+		"keyFields": [
+			"TEMPLATE"
+		],
+		"remapFields": {
+			"TEMPLATE": "NAME"
+		}
+	},
+	"INV_ENTRY_TMP_FIELDS": {
+		"parentType": "INV_ENTRY_TMP",
+		"keyFields": [
+			"FIELD_NAME"
+		],
+		"ordered": true
+	},
+	"INV_ENTRY_TMP_GROUPS": {
+		"parentType": "INV_ENTRY_TMP",
+		"keyFields": [
+			"GROUP_NUMBER"
+		],
+		"ordered": true
+	},
+	"INV_TRANS_TMP": {
+		"parentType": null,
+		"keyFields": [
+			"TEMPLATE"
+		],
+		"remapFields": {
+			"TEMPLATE": "NAME"
+		}
+	},
+	"INV_TRANS_TMP_FIELDS": {
+		"parentType": "INV_TRANS_TMP",
+		"keyFields": [
+			"FIELD_NAME"
+		],
+		"ordered": true
+	},
+	"INV_TRANS_TMP_GROUPS": {
+		"parentType": "INV_TRANS_TMP",
+		"keyFields": [
+			"GROUP_NUMBER"
+		],
+		"ordered": true
+	},
+	"ITEM_TEMPLATE": {
+		"parentType": null,
+		"keyFields": [
+			"TEMPLATE"
+		],
+		"remapFields": {
+			"TEMPLATE": "NAME"
+		}
+	},
+	"ITEM_TEMPLATE_FLDS": {
+		"parentType": "ITEM_TEMPLATE",
+		"keyFields": [
+			"FIELD_NAME"
+		],
+		"ordered": true
+	},
+	"LABEL_PRINTER": {
+		"parentType": null,
+		"keyFields": [
+			"PRINTER"
+		],
+		"remapFields": {
+			"PRINTER": "NAME"
+		}
+	},
+	"LABEL_LINE": {
+		"parentType": "LABEL_PRINTER",
+		"keyFields": [
+			"ENTRY_CODE"
+		],
+		"ordered": true,
+		"increment": {
+			"field": "ENTRY_CODE",
+			"incrementType": "LABEL_LINE",
+			"incrementName": "ENTRY_CODE"
+		}
+	},
+	"LDAP_SERVERS": {
+		"parentType": null,
+		"keyFields": [
+			"LDAP_SERVER"
+		],
+		"remapFields": {
+			"LDAP_SERVER": "NAME"
+		}
+	},
+	"LDAP_SERVER_MAPPING": {
+		"parentType": "LDAP_SERVERS",
+		"keyFields": [
+			"LIMS_FIELD",
+			"LDAP_FIELD"
+		]
+	},
+	"LICENSE_GROUP": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"LIMS_CONSTANTS": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"LIMS_LOG_CATEGORY": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"LIMS_USERS": {
+		"parentType": null,
+		"keyFields": [
+			"USER_NAME"
+		]
+	},
+	"GROUP_ENTRY": {
+		"parentType": "LIMS_USERS",
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"ACCESS_ENTRY": {
+		"parentType": "LIMS_USERS",
+		"keyFields": [
+			"FUNCTION_ID"
+		]
+	},
+	"USER_ROLE": {
+		"parentType": "LIMS_USERS",
+		"keyFields": [
+			"USER_ROLE"
+		]
+	},
+	"ANALYSIS_APPROVAL": {
+		"parentType": "LIMS_USERS",
+		"keyFields": [
+			"ANALYSIS"
+		]
+	},
+	"INSTRUMENT_APPROVAL": {
+		"parentType": "LIMS_USERS",
+		"keyFields": [
+			"INSTRUMENT"
+		]
+	},
+	"LOCATION": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"LOT_ID_CONFIG": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"LOT_TEMPLATE": {
+		"parentType": null,
+		"keyFields": [
+			"TEMPLATE"
+		],
+		"remapFields": {
+			"TEMPLATE": "NAME"
+		}
+	},
+	"LOT_TEMP_FIELDS": {
+		"parentType": "LOT_TEMPLATE",
+		"keyFields": [
+			"FIELD_NAME"
+		],
+		"ordered": true
+	},
+	"LOT_TEMP_GROUPS": {
+		"parentType": "LOT_TEMPLATE",
+		"keyFields": [
+			"GROUP_NUMBER"
+		],
+		"ordered": true
+	},
+	"MENU_ROUTINE": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"OBJECT_STORE_TEMP": {
+		"parentType": null,
+		"keyFields": [
+			"TEMPLATE"
+		],
+		"remapFields": {
+			"TEMPLATE": "NAME"
+		}
+	},
+	"OBJ_STORE_TMP_FLDS": {
+		"parentType": "OBJECT_STORE_TEMP",
+		"keyFields": [
+			"FIELD_NAME"
+		],
+		"ordered": true
+	},
+	"OBJ_GRP_ID_CONFIG": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"OBJ_GRP_TEMPLATE": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"ORDER_ID_CONFIG": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"PARSING_FORMULA": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"PARSING_SCRIPTS": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"PATIENT_ID_CONFIG": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"PLATE_ID_CONFIG": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"PRE_INVOICE_ID": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"PROCESS_UNIT": {
+		"parentType": null,
+		"keyFields": [
+			"PROCESS_UNIT"
+		],
+		"remapFields": {
+			"PROCESS_UNIT": "NAME"
+		}
+	},
+	"PROCESS_UNIT_PHASE": {
+		"parentType": "PROCESS_UNIT",
+		"keyFields": [
+			"PHASE"
+		],
+		"ordered": true
+	},
+	"PROC_SCHED_PARENT": {
+		"parentType": null,
+		"keyFields": [
+			"SCHEDULE_NAME",
+			"VERSION"
+		],
+		"remapFields": {
+			"SCHEDULE_NAME": "NAME"
+		}
+	},
+	"PROCESS_SCHEDULE": {
+		"parentType": "PROC_SCHED_PARENT",
+		"keyFields": [
+			"SCHEDULE_NUMBER"
+		],
+		"ordered": true,
+		"increment": {
+			"field": "SCHEDULE_NUMBER",
+			"incrementType": "PROCESS_SCHEDULE",
+			"incrementName": "SCHEDULE_NUMBER"
+		}
+	},
+	"PRODUCT_FILTER": {
+		"parentType": null,
+		"keyFields": [
+			"TEMPLATE"
+		],
+		"remapFields": {
+			"TEMPLATE": "NAME"
+		}
+	},
+	"PROD_FILTER_FIELDS": {
+		"parentType": "PRODUCT_FILTER",
+		"keyFields": [
+			"FIELD_NAME"
+		],
+		"ordered": true
+	},
+	"PRODUCT_TEMPLATE": {
+		"parentType": null,
+		"keyFields": [
+			"TEMPLATE"
+		],
+		"remapFields": {
+			"TEMPLATE": "NAME"
+		}
+	},
+	"PROD_TEMP_FIELDS": {
+		"parentType": "PRODUCT_TEMPLATE",
+		"keyFields": [
+			"FIELD_NAME"
+		],
+		"ordered": true
+	},
+	"PROD_TEMP_GROUPS": {
+		"parentType": "PRODUCT_TEMPLATE",
+		"keyFields": [
+			"GROUP_NUMBER"
+		],
+		"ordered": true
+	},
+	"PROJECT_FILTER": {
+		"parentType": null,
+		"keyFields": [
+			"TEMPLATE"
+		],
+		"remapFields": {
+			"TEMPLATE": "NAME"
+		}
+	},
+	"PROJ_FILTER_FIELDS": {
+		"parentType": "PROJECT_FILTER",
+		"keyFields": [
+			"FIELD_NAME"
+		],
+		"ordered": true
+	},
+	"PROJECT_ID_CONFIG": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"PROJECT_TEMPLATE": {
+		"parentType": null,
+		"keyFields": [
+			"TEMPLATE",
+			"VERSION"
+		],
+		"remapFields": {
+			"TEMPLATE": "NAME"
+		}
+	},
+	"PROJECT_TEMP_FIELDS": {
+		"parentType": "PROJECT_TEMPLATE",
+		"keyFields": [
+			"FIELD_NAME"
+		],
+		"ordered": true
+	},
+	"PROJ_TEMP_GROUPS": {
+		"parentType": "PROJECT_TEMPLATE",
+		"keyFields": [
+			"GROUP_NUMBER"
+		],
+		"ordered": true
+	},
+	"PROJECT_COMPONENT": {
+		"parentType": "PROJECT_TEMPLATE",
+		"keyFields": [
+			"COMPONENT"
+		],
+		"remapFields": {
+			"COMPONENT": "NAME"
+		},
+		"ordered": true
+	},
+	"PROJECT_COMP_CODES": {
+		"parentType": "PROJECT_COMPONENT",
+		"keyFields": [
+			"CODE"
+		]
+	},
+	"PROJECT_CALCULATION": {
+		"parentType": "PROJECT_COMPONENT"
+	},
+	"PROJECT_CALC_VAR": {
+		"parentType": "PROJECT_COMPONENT",
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"PROT_FORM_TEMP": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"PROT_FORM_FIELDS": {
+		"parentType": "PROT_FORM_TEMP",
+		"keyFields": [
+			"FIELD_NAME"
+		],
+		"ordered": true
+	},
+	"QUERY_TAG": {
+		"parentType": null,
+		"keyFields": [
+			"QUERY_TAG"
+		]
+	},
+	"QUERY_TAG_PROPS": {
+		"parentType": "QUERY_TAG"
+	},
+	"RECIPE_ID_CNFG": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"REQUEST_ID_CONFIG": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"REQUEST_TMP": {
+		"parentType": null,
+		"keyFields": [
+			"TEMPLATE"
+		],
+		"remapFields": {
+			"TEMPLATE": "NAME"
+		}
+	},
+	"REQUEST_TMP_FIELDS": {
+		"parentType": "REQUEST_TMP",
+		"keyFields": [
+			"FIELD_NAME"
+		],
+		"ordered": true
+	},
+	"REQUEST_TMP_GROUPS": {
+		"parentType": "REQUEST_TMP",
+		"keyFields": [
+			"GROUP_NUMBER"
+		],
+		"ordered": true
+	},
+	"REQ_ENT_TMP": {
+		"parentType": null,
+		"keyFields": [
+			"TEMPLATE"
+		],
+		"remapFields": {
+			"TEMPLATE": "NAME"
+		}
+	},
+	"REQ_ENT_TMP_FLDS": {
+		"parentType": "REQ_ENT_TMP",
+		"keyFields": [
+			"FIELD_NAME"
+		],
+		"ordered": true
+	},
+	"REQ_ENT_TMP_GRPS": {
+		"parentType": "REQ_ENT_TMP",
+		"keyFields": [
+			"GROUP_NUMBER"
+		],
+		"ordered": true
+	},
+	"SAMPLE_DISP_FLDS": {
+		"parentType": null,
+		"keyFields": [
+			"SAMPLE_DISP_FLDS"
+		],
+		"remapFields": {
+			"SAMPLE_DISP_FLDS": "NAME"
+		}
+	},
+	"SAMPLE_DISP_ENTRY": {
+		"parentType": "SAMPLE_DISP_FLDS",
+		"keyFields": [
+			"SAMPLE_FIELD"
+		],
+		"ordered": true
+	},
+	"SAMPLE_FILTER": {
+		"parentType": null,
+		"keyFields": [
+			"TEMPLATE"
+		],
+		"remapFields": {
+			"TEMPLATE": "NAME"
+		}
+	},
+	"SAMPLE_FILTER_FIELDS": {
+		"parentType": "SAMPLE_FILTER",
+		"keyFields": [
+			"FIELD_NAME"
+		],
+		"ordered": true
+	},
+	"SAMPLE_TEMPLATE": {
+		"parentType": null,
+		"keyFields": [
+			"TEMPLATE"
+		],
+		"remapFields": {
+			"TEMPLATE": "NAME"
+		}
+	},
+	"TEMPLATE_FIELDS": {
+		"parentType": "SAMPLE_TEMPLATE",
+		"keyFields": [
+			"FIELD_NAME"
+		],
+		"ordered": true
+	},
+	"SAMP_TEMP_GROUPS": {
+		"parentType": "SAMPLE_TEMPLATE",
+		"keyFields": [
+			"GROUP_NUMBER"
+		],
+		"ordered": true
+	},
+	"SAMPLING_POINT": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"SCHED_TYPE_TEMP": {
+		"parentType": null,
+		"keyFields": [
+			"TEMPLATE"
+		],
+		"remapFields": {
+			"TEMPLATE": "NAME"
+		}
+	},
+	"SCHED_TYPE_TMP_FLD": {
+		"parentType": "SCHED_TYPE_TEMP",
+		"keyFields": [
+			"FIELD_NAME"
+		],
+		"ordered": true
+	},
+	"SEARCH_TEMPLATE": {
+		"parentType": null,
+		"keyFields": [
+			"TEMPLATE"
+		],
+		"remapFields": {
+			"TEMPLATE": "NAME"
+		}
+	},
+	"SEARCH_TEMP_FLDS": {
+		"parentType": "SEARCH_TEMPLATE",
+		"keyFields": [
+			"FIELD_NAME"
+		],
+		"ordered": true
+	},
+	"SEARCH_TEMP_GRPS": {
+		"parentType": "SEARCH_TEMPLATE",
+		"keyFields": [
+			"GROUP_NUMBER"
+		],
+		"ordered": true
+	},
+	"SERVICES": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"SERVICE_MANAGER": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"STABILITY_LEVEL": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"STD_ID_CONFIG": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"STD_REAG_TEMP": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"STORAGE_LOC_TEMP": {
+		"parentType": null,
+		"keyFields": [
+			"TEMPLATE"
+		],
+		"remapFields": {
+			"TEMPLATE": "NAME"
+		}
+	},
+	"STOR_LOC_TMP_FLDS": {
+		"parentType": "STORAGE_LOC_TEMP",
+		"keyFields": [
+			"FIELD_NAME"
+		],
+		"ordered": true
+	},
+	"STORAGE_MOVE_TEMP": {
+		"parentType": null,
+		"keyFields": [
+			"TEMPLATE"
+		],
+		"remapFields": {
+			"TEMPLATE": "NAME"
+		}
+	},
+	"STOR_MOVE_TMP_FLDS": {
+		"parentType": "STORAGE_MOVE_TEMP",
+		"keyFields": [
+			"FIELD_NAME"
+		],
+		"ordered": true
+	},
+	"STORED_QUERY": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"STOR_LOC_ID_CONFIG": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"SUBROUTINE": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"SUPPLIER": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"TABLE_LIST_HEADER": {
+		"parentType": null,
+		"keyFields": [
+			"TABLE_LIST"
+		],
+		"remapFields": {
+			"TABLE_LIST": "NAME"
+		}
+	},
+	"TABLE_LIST_DETAIL": {
+		"parentType": "TABLE_LIST_HEADER",
+		"keyFields": [
+			"ENTRY_VALUE"
+		],
+		"ordered": true
+	},
+	"TABLE_MASTER": {
+		"parentType": null,
+		"keyFields": [
+			"TABLE_NAME"
+		],
+		"remapFields": {
+			"TABLE_NAME": "NAME"
+		}
+	},
+	"FIELD_MASTER": {
+		"parentType": "TABLE_MASTER",
+		"keyFields": [
+			"FIELD_NAME"
+		]
+	},
+	"TABLE_TEMPLATE": {
+		"parentType": null,
+		"keyFields": [
+			"TEMPLATE"
+		],
+		"remapFields": {
+			"TEMPLATE": "NAME"
+		}
+	},
+	"TABLE_TEMP_FIELDS": {
+		"parentType": "TABLE_TEMPLATE",
+		"keyFields": [
+			"FIELD_NAME"
+		],
+		"ordered": true
+	},
+	"TABLE_TEMP_GROUPS": {
+		"parentType": "TABLE_TEMPLATE",
+		"keyFields": [
+			"GROUP_NUMBER"
+		],
+		"ordered": true
+	},
+	"TAX_GROUP": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"TEST_DISP_FLDS": {
+		"parentType": null,
+		"keyFields": [
+			"TEST_DISP_FLDS"
+		],
+		"remapFields": {
+			"TEST_DISP_FLDS": "NAME"
+		}
+	},
+	"TEST_DISP_ENTRY": {
+		"parentType": "TEST_DISP_FLDS",
+		"keyFields": [
+			"TEST_FIELD"
+		],
+		"ordered": true
+	},
+	"TEST_LIST": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"TEST_LIST_ENTRY": {
+		"parentType": "TEST_LIST",
+		"keyFields": [
+			"ANALYSIS",
+			"ANALYSIS_COUNT"
+		],
+		"ordered": true
+	},
+	"TEST_LOCATION": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"TEST_TEMPLATE": {
+		"parentType": null,
+		"keyFields": [
+			"TEMPLATE"
+		],
+		"remapFields": {
+			"TEMPLATE": "NAME"
+		}
+	},
+	"TEST_TEMP_FIELDS": {
+		"parentType": "TEST_TEMPLATE",
+		"keyFields": [
+			"FIELD_NAME"
+		],
+		"ordered": true
+	},
+	"TIMEPOINT": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"T_BULK_RESULT_ENTRY": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"T_CORRECTIVE_ACTION": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"T_GAP_ANAL_MAP": {
+		"parentType": null,
+		"keyFields": [
+			"T_GAP_ANAL_MAP"
+		],
+		"remapFields": {
+			"T_GAP_ANAL_MAP": "NAME"
+		}
+	},
+	"T_GAP_ANAL_MAP_FIELD": {
+		"parentType": "T_GAP_ANAL_MAP",
+		"ordered": true
+	},
+	"T_KPI_QUERY2": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"T_LABEL_FORMAT": {
+		"parentType": null,
+		"keyFields": [
+			"T_LABEL_FORMAT"
+		],
+		"remapFields": {
+			"T_LABEL_FORMAT": "NAME"
+		}
+	},
+	"T_LABEL_FORMAT_LINE": {
+		"parentType": "T_LABEL_FORMAT",
+		"keyFields": [
+			"LINE_NUMBER"
+		],
+		"ordered": true
+	},
+	"T_LABEL_FORMAT_FONT": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"T_LOT_DISP_CHECKS": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"T_ODBC_CONNECT": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"T_ORGANISM": {
+		"parentType": null,
+		"keyFields": [
+			"NAME",
+			"VERSION"
+		]
+	},
+	"T_PERSONNEL": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"T_PH_COMPOUND": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"T_PH_GRADE": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"T_PH_ITEM_CODE": {
+		"parentType": null,
+		"keyFields": [
+			"T_PH_ITEM_CODE",
+			"VERSION"
+		],
+		"remapFields": {
+			"T_PH_ITEM_CODE": "NAME"
+		}
+	},
+	"T_PH_ITEM_CODE_CERT": {
+		"parentType": "T_PH_ITEM_CODE",
+		"keyFields": [
+			"COA_SETUP"
+		],
+		"ordered": true
+	},
+	"T_PH_ITEM_CODE_PACK": {
+		"parentType": "T_PH_ITEM_CODE",
+		"keyFields": [
+			"PACK_CODE"
+		],
+		"ordered": true
+	},
+	"T_PH_ITEM_CODE_SPEC": {
+		"parentType": "T_PH_ITEM_CODE",
+		"keyFields": [
+			"SPEC_CODE"
+		],
+		"ordered": true
+	},
+	"T_PH_ITEM_CODE_SUPP": {
+		"parentType": "T_PH_ITEM_CODE",
+		"keyFields": [
+			"SUPPLIER"
+		],
+		"ordered": true
+	},
+	"T_PH_SAMPLE_PLAN": {
+		"parentType": null,
+		"keyFields": [
+			"T_PH_SAMPLE_PLAN",
+			"VERSION"
+		],
+		"remapFields": {
+			"T_PH_SAMPLE_PLAN": "NAME"
+		}
+	},
+	"T_PH_SAMPLE_PLAN_EN": {
+		"parentType": "T_PH_SAMPLE_PLAN",
+		"keyFields": [
+			"ENTRY_CODE"
+		],
+		"ordered": true
+	},
+	"T_PH_SAMPLE_PLAN_AM": {
+		"parentType": "T_PH_SAMPLE_PLAN_EN",
+		"keyFields": [
+			"ENTRY_NUMBER"
+		],
+		"ordered": true
+	},
+	"T_PH_SPEC_TYPE": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"T_PH_STAGE": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"T_PLANT": {
+		"parentType": null,
+		"keyFields": [
+			"T_PLANT"
+		],
+		"remapFields": {
+			"T_PLANT": "NAME"
+		}
+	},
+	"T_PLANT_ORGANISM": {
+		"parentType": "T_PLANT",
+		"keyFields": [
+			"ORGANISM"
+		],
+		"ordered": true
+	},
+	"T_PRINTER": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"T_REPORT_TEXT": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"T_SAMPLE_TYPE": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"T_SITE": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"T_SUITE": {
+		"parentType": null,
+		"keyFields": [
+			"T_SUITE"
+		],
+		"remapFields": {
+			"T_SUITE": "NAME"
+		}
+	},
+	"T_SUITE_PERSONNEL": {
+		"parentType": "T_SUITE",
+		"keyFields": [
+			"PERSONNEL"
+		],
+		"ordered": true
+	},
+	"T_WINDOW_ABBREV": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"USER_DIALOG_TEMP": {
+		"parentType": null,
+		"keyFields": [
+			"TEMPLATE"
+		],
+		"remapFields": {
+			"TEMPLATE": "NAME"
+		}
+	},
+	"USER_DLG_TMP_FLDS": {
+		"parentType": "USER_DIALOG_TEMP",
+		"keyFields": [
+			"FIELD_NAME"
+		],
+		"ordered": true
+	},
+	"USER_DLG_TMP_GRPS": {
+		"parentType": "USER_DIALOG_TEMP",
+		"keyFields": [
+			"GROUP_NUMBER"
+		],
+		"ordered": true
+	},
+	"USER_LIST": {
+		"parentType": null,
+		"keyFields": [
+			"USER_LIST"
+		],
+		"remapFields": {
+			"USER_LIST": "NAME"
+		}
+	},
+	"USER_LIST_DETAIL": {
+		"parentType": "USER_LIST",
+		"keyFields": [
+			"USER_NAME"
+		],
+		"ordered": true
+	},
+	"VENDOR": {
+		"parentType": null,
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"WORKSTATION_TYPE": {
+		"parentType": null,
+		"keyFields": [
+			"TYPE_NAME"
+		]
+	},
+	"WORKSTATION_ENTRY": {
+		"parentType": "WORKSTATION_TYPE",
+		"keyFields": [
+			"ENTRY_KEY"
+		]
+	},
+	"ZIPCODES": {
+		"parentType": null,
+		"keyFields": [
+			"ENTRY_CODE"
+		],
+		"increment": {
+			"field": "ENTRY_CODE",
+			"incrementType": "ZIPCODES",
+			"incrementName": "ENTRY_CODE"
+		}
+	},
+	"BATCH_CALCULATION": {
+		"parentType": "BATCH_COMPONENT"
+	},
+	"BATCH_CALC_VAR": {
+		"parentType": "BATCH_COMPONENT",
+		"keyFields": [
+			"NAME"
+		]
+	},
+	"USER_DLG_MENUS": {
+		"parentType": "USER_DIALOG_TEMP",
+		"keyFields": [
+			"MENU_ITEM"
+		],
+		"remapFields": {
+			"TEMPLATE": "USER_DIALOG_TEMP"
+		},
+		"ordered": true
+	}
+}

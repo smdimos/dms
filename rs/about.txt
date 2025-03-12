@@ -1,0 +1,13 @@
+Functional Suite «LabSys»
+by Dmytro Malikov <dmytro@malikov.us>
+released on 2025-03-06
+
+DMS 1
+Shell 1
+Controls 1
+Modules 1
+Tools 1
+
+Ace 1.36.5
+AG Grid 32.3.3
+SheetJS XLSX 0.20.3
